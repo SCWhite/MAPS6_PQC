@@ -1,4 +1,4 @@
-# Apply PQC on MAPSV6
+# Apply PQC on MAPS6
 
 This release uses MQTTS with Post-Quantum Cryptography (PQC).
 
