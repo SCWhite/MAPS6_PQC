@@ -99,7 +99,8 @@ RUN apt-get update && apt-get install -y \
     libfreetype6-dev \ 
     liblcms2-dev \ 
     libwebp-dev \
-    python3-setuptools  
+    python3-setuptools \
+    iputils-ping
 #--no-install-recommends
 
 RUN pip3 install --no-binary Pillow requests
@@ -116,7 +117,7 @@ COPY --from=builder $OPENSSL_LIB_PATH  $OPENSSL_LIB_PATH
 COPY --from=builder /usr/local/lib  /usr/local/lib
 COPY --from=builder /usr/local/bin  /usr/local/bin
 COPY --from=builder /usr/local/sbin  /usr/local/sbin
-COPY --from=builder /usr/lib/arm-linux-gnueabihf/libcjson.so.1 /usr/lib/arm-linux-gnueabihf
+#COPY --from=builder /usr/lib/arm-linux-gnueabihf/libcjson.so.1 /usr/lib/arm-linux-gnueabihf
 
 # Dynamically link to mosquitto
 RUN ln -s /usr/local/lib/libmosquitto.so.1 /usr/lib/libmosquitto.so.1 && ldconfig
