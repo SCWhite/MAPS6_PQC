@@ -9,4 +9,3 @@ docker run -p 8883:8883 -itd --restart unless-stopped \
 --privileged \
 -e "BROKER_IP=34.215.240.96" -e "PUB_IP=60.250.153.171" \
 chiachin86/maps6-mqtts
-
